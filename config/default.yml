@@ -4,14 +4,42 @@ recipes:                                       # Configs are parsed and every li
     mac_os_x:                                  # Recipes mentioned under "mac_os_x" are installed on OSX and OSX Server
         - homebrewalt::default                 # Installs homebrew and homebrew cask and installs all apps mentioned in the homebrewalt:apps and homebrewalt:cask_apps attributes
         - nodejs::default                      # Installs nodejs and installs all nodejs packages mentioned in the nodejs:apps attribute
+        # - drivers::
+        - osxdefaults::set_terminal_profile
+        - osxdefaults::enable_assistive_devices
+        - osxdefaults::enable_full_keyboard_access_for_all_controls
+        - osxdefaults::increase_window_resize_speed_for_cocoa_applications
+        - osxdefaults::speed_up_mission_control_animations
+        - osxdefaults::tap_to_click
+        - osxdefaults::do_not_show_dashboard_as_a_space
+        - osxdefaults::prevent_time_machine_from_prompting_to_use_new_hard_drives_as_backup_volume
+        - osxdefaults::finder_allow_text_selection_in_quick_look
+        - osxdefaults::finder_display_full_path
+        - osxdefaults::finder_use_column_view_in_all_finder_windows_by_default
+        - osxdefaults::finder_automatically_open_a_new_finder_window_when_a_volume_is_mounted
+        - osxdefaults::finder_search_the_current_folder_by_default
+        - osxdefaults::finder_unhide_home
+        - osxdefaults::menu_add_battery_percentage
+        - osxdefaults::menu_show_clock_with_date
+        - osxdefaults::mail_when_searching_do_not_include_trash
+        - osxdefaults::mail_copy_email_addresses_instead_of_names_in_mail
 attributes:
     homebrewalt:
         apps:
             - git
+            - git-extras
+            - wget
+            - sourcetree
         cask_apps:
             - google-chrome
-        cask_fonts:   
-            - inconsolata
+            - sublime-text
+            - java
+            - iterm2
     nodejs:
         apps:
             - bower
+            - grunt
+            - grunt-cli
+    git:
+        name: Fernando Tadashi Akimoto
+        email: f.tadashi@gmail.com
